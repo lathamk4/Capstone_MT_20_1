@@ -1,3 +1,5 @@
+Dataset & reference: https://www.kaggle.com/datasets/tboyle10/medicaltranscriptions
+
 # Goal:
 The goal of this project is to build a machine learning model that can accurately predict the medical specialty based on the content of medical transcriptions. 
 This will help automate classification, streamline healthcare workflows, and support faster and more accurate specialist referrals.
