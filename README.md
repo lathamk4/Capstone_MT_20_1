@@ -1,3 +1,5 @@
+Link to the solution: https://github.com/lathamk4/Capstone_MT_20_1/blob/main/Capstone.ipynb
+
 Dataset & reference: https://www.kaggle.com/datasets/tboyle10/medicaltranscriptions
 
 # Goal:
