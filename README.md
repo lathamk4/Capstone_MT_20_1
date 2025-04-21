@@ -27,14 +27,25 @@ Lowercasing , Removing Punctuation and Stop words were used. Tokenization and Le
 #3) Data Visualization: 
 a) Distribution of medical specialty: 
 This plot helps find any imbalance in the dataset and based on the observation we can use techniques like oversampling or undersampling to overcome the bias or variance
+![1](https://github.com/user-attachments/assets/26947e16-48e1-4606-bcc8-9dd9e38bb9ed)
+
 b) Trasncription length by Medical specialty: 
 This plot helps identify which specialties produce longer or more detailed notes, guiding preprocessing and model input length. It also reveals content variability, useful for customizing NLP models per specialty.
+![2](https://github.com/user-attachments/assets/21427796-18b2-4c34-9efe-c3d078654c7b)
 c) TOP TF-IDF terms by medical specialty plot :
+![3](https://github.com/user-attachments/assets/f47ee9ea-5f73-433d-84c9-5220f262a57f)
+
 d) Top 10 most common words per Medical specialty plot:
+![4](https://github.com/user-attachments/assets/c3594832-0fb4-4b4a-b016-8e92f55bb828)
+
 Both the plot helps identifying unique words specific to specialty thereby enhacing the feature extraction and specialty specific text classification
 e) word cloud by transcriptions : 
+![5](https://github.com/user-attachments/assets/9362656c-d89c-49e8-ac90-d35e78af249c)
+
 This plot helps visualize most frequent terms among all the specialities and aids in the quick exploratory analysis 
 f) Top 10 Most frequent word specific to specialty 
+![6](https://github.com/user-attachments/assets/3153c211-6db4-41fa-97e8-c99e11c7cb65)
+
 This plot helps with identifying the specialty-specific language pattern which in turn improve model performance.
 
 #4) Feature Engineering : 
