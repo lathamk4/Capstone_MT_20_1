@@ -56,4 +56,36 @@ Identify the NER to extract entities like patient age and sex and remove from tr
 
 #5 Initial Modeling:
 The Multinomial Naive Bayes classifier model is used for training and Accuracy score was just 37%. 
-More to explore and fine tune in the next module . 
+
+# Findings:
+Extremely Imbalanced Dataset:
+Several medical specialties have only 1–2 examples, making it difficult for the model to learn any meaningful patterns from those categories.
+
+Underfitting:
+The current Multinomial Naive Bayes model appears too simple for the complexity of this classification task. It ends up focusing on a few majority classes while ignoring the rest.
+
+Zero F1-Scores for Most Classes:
+As shown in the classification report, the model fails to predict the majority of classes, resulting in zero precision, recall, and F1 scores for many categories.
+
+
+# Next Steps / Ideas for Improvement:
+1. Class Grouping or Rebalancing
+Consider merging infrequent medical specialties into an “Other” or “Miscellaneous” category.
+
+Alternatively, drop very rare classes and focus on the most common 10–15 specialties to simplify the classification task initially.
+
+2. Resampling Techniques
+Use techniques like oversampling (e.g., RandomOverSampler) or undersampling to balance the class distribution in the training data.
+
+3. Stronger Classification Models
+Explore more expressive models that can better handle text features and class imbalances:
+    
+    Logistic Regression – baseline linear classifier that often performs well on text
+    
+    Support Vector Machine (SVM) – good for high-dimensional sparse data (e.g., TF-IDF vectors)
+    
+    Random Forest – may handle class imbalance better, though slower on high-dimensional data
+    
+    Transformer-based Models – like BERT, which can capture complex language patterns and context better than traditional models
+
+4.Feature Engineering with other Vectorization Techniques like CountVectorizer, ClinicalBERT transformers.
