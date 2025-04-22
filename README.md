@@ -66,6 +66,7 @@ The current Multinomial Naive Bayes model appears too simple for the complexity 
 
 Zero F1-Scores for Most Classes:
 As shown in the classification report, the model fails to predict the majority of classes, resulting in zero precision, recall, and F1 scores for many categories.
+
 ![7](https://github.com/user-attachments/assets/487aa8cd-4aab-4589-afe9-2477282a7433)
 
 
