@@ -137,7 +137,7 @@ Validation F1 Score (Macro): 25.37%
    Naive Bayes is incompatible due to assumption of discrete count-based features and SVM underperforms here possibly due to overfitting or improper kernel choice.
 4) The BioBERT model with a weighted loss function demonstrated limited performance, with a validation accuracy of 32.15% and F1 score of 25.37%. The results highlight the challenges of applying deep learning to imbalanced and noisy clinical text, and suggest that further improvements require a combination of data cleaning, architectural tuning, and task-specific adaptation strategies.
    
-Overall, Random Sampling worked better than SMOTE and BERT Embeddings, although results of BERT embeddings were promising.Traditional models like LR, SVM, RF perform well on unbalanced data but might get biased toward dominant classes. Hence **SVM with Random sampler seems to be a good candidate to use with further fine tuning.**
+Overall, Random Sampling worked better than SMOTE and BERT Embeddings, although results of BERT embeddings were promising.Traditional models like LR, SVM, RF perform well on unbalanced data but might get biased toward dominant classes. Hence **SVM with Random sampler seems to be a good candidate to use with further fine tuning (Cross Validation and Hyperparameter Optimization techniques).**
 
 # suggestions for improvement : 
 
@@ -147,4 +147,10 @@ Overall, Random Sampling worked better than SMOTE and BERT Embeddings, although 
 4) Data Augmentation: Generate synthetic samples to increase the diversity of training data.
 5) Expert Review: Collaborate with medical professionals to validate and refine the dataset, ensuring its clinical relevance and accuracy.
 6) Error Analysis: Generate and analyze a confusion matrix to identify class-specific misclassifications.
-7) For Clinical BERT , Increase training epochs to 5–10; apply learning rate warm-up and decay; consider gradient clipping. 
+7) For Clinical BERT , Increase training epochs to 5–10; apply learning rate warm-up and decay; consider gradient clipping.
+
+# Additional Steps performed: 
+1) Model Saving: Store associated preprocessing objects (e.g., tokenizers, encoders) to ensure consistency during inference. Helps to avoid retraining , Imporves efficiency and makes it deployment ready
+2) Inference Pipeline: Set up a pipeline that takes new, unseen medical transcriptions and processes them through the same preprocessing steps.Load the saved model and generate predictions for the appropriate medical specialty.
+3) Package the model and inference pipeline into a service. FASTAPI was used . This step ensures low-latency, scalable responses for real-world usage. 
+
