@@ -114,8 +114,9 @@ Dataset is not clinically validated; content may not reflect real-world diagnost
 # Steps taken to mitigate the problems : 
 
 1. Unique words are identified for each row and models were trained using the unique words
-2. Resampling Techniques: Applied methods like Random Sampler, SMOTE (Synthetic Minority Over-sampling Technique) to balance the class distribution.
-3. Advanced Models: used transformer-based models, (BioBERT)  which are well-suited for medical text classification tasks.
+2. Resampling Techniques: Applied methods like Random Sampler to balance the class distribution.
+3. Data Augmentation: Generate synthetic samples (SMOTE) was used to increase the diversity of training data.
+4. Advanced Models: used transformer-based models, (BioBERT)  which are well-suited for medical text classification tasks.
 
 # Results: 
 As mentioned in the Capstone 20.1 , different sampler techniques were used with different models . The accuracy comparison is as follows 
@@ -125,6 +126,13 @@ As mentioned in the Capstone 20.1 , different sampler techniques were used with 
 Clearly the random sampler with SVC model provides higher accuracy .
 
 # Important findings
+
+1) Random sampling maintains the original data distribution, which seems to perform best with classical ML models.
+2) SMOTE is likely generating low-quality synthetic samples, since its text data . May be numerical data or embeddings (BERT) with SMOTE might work better, even then its risky.
+3) BERT captures contextual semantics, which benefits deeper models or those with dense input support (i.e) Logistic Regression and Random Forest. 
+   Naive Bayes is incompatible due to assumption of discrete count-based features and SVM underperforms here possibly due to overfitting or improper kernel choice.
+
+Overall, Random Sampling worked better than SMOTE and BERT Embeddings, although results of BERT embeddings were promising.Traditional models like LR, SVM, RF perform well on unbalanced data but might get biased toward dominant classes.**SVM can be used with further fine tuning.**
 
 # suggestions for improvement : 
 
