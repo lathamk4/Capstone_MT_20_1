@@ -123,7 +123,11 @@ As mentioned in the Capstone 20.1 , different sampler techniques were used with 
 
 ![24_1_1](https://github.com/user-attachments/assets/004609ea-c198-4d82-8c26-ec96ee64e5e9)
 
-Clearly the random sampler with SVC model provides higher accuracy .
+**Below are the evaluation metrics using Bio Bert with weighted loss**
+
+Training Loss: 2.2628
+Validation Accuracy: 32.15%
+Validation F1 Score (Macro): 25.37%
 
 # Important findings
 
@@ -131,14 +135,16 @@ Clearly the random sampler with SVC model provides higher accuracy .
 2) SMOTE is likely generating low-quality synthetic samples, since its text data . May be numerical data or embeddings (BERT) with SMOTE might work better, even then its risky.
 3) BERT captures contextual semantics, which benefits deeper models or those with dense input support (i.e) Logistic Regression and Random Forest. 
    Naive Bayes is incompatible due to assumption of discrete count-based features and SVM underperforms here possibly due to overfitting or improper kernel choice.
-
-Overall, Random Sampling worked better than SMOTE and BERT Embeddings, although results of BERT embeddings were promising.Traditional models like LR, SVM, RF perform well on unbalanced data but might get biased toward dominant classes.**SVM can be used with further fine tuning.**
+4) The BioBERT model with a weighted loss function demonstrated limited performance, with a validation accuracy of 32.15% and F1 score of 25.37%. The results highlight the challenges of applying deep learning to imbalanced and noisy clinical text, and suggest that further improvements require a combination of data cleaning, architectural tuning, and task-specific adaptation strategies.
+   
+Overall, Random Sampling worked better than SMOTE and BERT Embeddings, although results of BERT embeddings were promising.Traditional models like LR, SVM, RF perform well on unbalanced data but might get biased toward dominant classes. Hence **SVM with Random sampler seems to be a good candidate to use with further fine tuning.**
 
 # suggestions for improvement : 
 
-Feature Engineering: Incorporate domain-specific features to enhance model understanding.
-
-Data Augmentation: Generate synthetic samples to increase the diversity of training data.
-
-Expert Review: Collaborate with medical professionals to validate and refine the dataset, ensuring its clinical relevance and accuracy.
-
+1) Preprocessing:	Strip headers, anonymization tags, and extraneous text; limit inputs to most informative sections (e.g., first 256 tokens).
+2) Feature Engineering: Incorporate domain-specific features to enhance model understanding.
+3) Label Structure:	Review and consider merging similar specialty labels based on semantic overlap.
+4) Data Augmentation: Generate synthetic samples to increase the diversity of training data.
+5) Expert Review: Collaborate with medical professionals to validate and refine the dataset, ensuring its clinical relevance and accuracy.
+6) Error Analysis: Generate and analyze a confusion matrix to identify class-specific misclassifications.
+7) For Clinical BERT , Increase training epochs to 5–10; apply learning rate warm-up and decay; consider gradient clipping. 
