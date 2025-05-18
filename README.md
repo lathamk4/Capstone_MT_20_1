@@ -81,7 +81,7 @@ Use techniques like oversampling (e.g., RandomOverSampler) or undersampling to b
 
 3. Stronger Classification Models
 Explore more expressive models that can better handle text features and class imbalances:
-    
+ 
     Logistic Regression – baseline linear classifier that often performs well on text
     
     Support Vector Machine (SVM) – good for high-dimensional sparse data (e.g., TF-IDF vectors)
@@ -91,3 +91,44 @@ Explore more expressive models that can better handle text features and class im
     Transformer-based Models – like BERT, which can capture complex language patterns and context better than traditional models
 
 4.Feature Engineering with other Vectorization Techniques like CountVectorizer, ClinicalBERT transformers.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Capstone 24.1 
+
+# problems : 
+Few challenges associated with finding the right machine learning solution are listed below:
+
+1. Severe Class Imbalance
+Some medical specialties (e.g., "Surgery") have hundreds of transcriptions, while others (e.g., "Allergy / Immunology") have fewer than 10.
+
+2. Noisy and Overlapping Content
+Transcriptions often contain overlapping content across specialties (e.g., general terms or shared procedures).This reduces model discriminative power and increases confusion between classes.
+
+3. Lack of Standardization
+Text formatting varies widely: inconsistent punctuation, abbreviations, and non-standard medical terms. Requires extensive preprocessing (tokenization, lemmatization, stop-word removal).
+
+4. Unverified Clinical Accuracy
+Dataset is not clinically validated; content may not reflect real-world diagnostic or transcription standards.Limits applicability in real healthcare ML systems due to potential misinformation.
+
+# Results: 
+As mentioned in the Capstone 20.1 , different sampler techniques were used with different models . The accuracy comparison is as follows 
+
+![24_1_1](https://github.com/user-attachments/assets/004609ea-c198-4d82-8c26-ec96ee64e5e9)
+
+Clearly the random sampler with SVC model provides higher accuracy .
+
+# Important findings
+
+# suggestions for improvement : 
+
+Resampling Techniques: Apply methods like SMOTE (Synthetic Minority Over-sampling Technique) to balance the class distribution.
+
+Feature Engineering: Incorporate domain-specific features to enhance model understanding.
+
+Data Augmentation: Generate synthetic samples to increase the diversity of training data.
+
+Advanced Models: Utilize transformer-based models, such as BERT or BioBERT, which are well-suited for medical text classification tasks.
+
+Expert Review: Collaborate with medical professionals to validate and refine the dataset, ensuring its clinical relevance and accuracy.
+
