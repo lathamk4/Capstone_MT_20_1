@@ -96,7 +96,7 @@ Explore more expressive models that can better handle text features and class im
 
 Capstone 24.1 
 
-# problems : 
+# Problems : 
 Few challenges associated with finding the right machine learning solution are listed below:
 
 1. Severe Class Imbalance
@@ -111,6 +111,12 @@ Text formatting varies widely: inconsistent punctuation, abbreviations, and non-
 4. Unverified Clinical Accuracy
 Dataset is not clinically validated; content may not reflect real-world diagnostic or transcription standards.Limits applicability in real healthcare ML systems due to potential misinformation.
 
+# Steps taken to mitigate the problems : 
+
+1. Unique words are identified for each row and models were trained using the unique words
+2. Resampling Techniques: Applied methods like Random Sampler, SMOTE (Synthetic Minority Over-sampling Technique) to balance the class distribution.
+3. Advanced Models: used transformer-based models, (BioBERT)  which are well-suited for medical text classification tasks.
+
 # Results: 
 As mentioned in the Capstone 20.1 , different sampler techniques were used with different models . The accuracy comparison is as follows 
 
@@ -122,13 +128,9 @@ Clearly the random sampler with SVC model provides higher accuracy .
 
 # suggestions for improvement : 
 
-Resampling Techniques: Apply methods like SMOTE (Synthetic Minority Over-sampling Technique) to balance the class distribution.
-
 Feature Engineering: Incorporate domain-specific features to enhance model understanding.
 
 Data Augmentation: Generate synthetic samples to increase the diversity of training data.
-
-Advanced Models: Utilize transformer-based models, such as BERT or BioBERT, which are well-suited for medical text classification tasks.
 
 Expert Review: Collaborate with medical professionals to validate and refine the dataset, ensuring its clinical relevance and accuracy.
 
